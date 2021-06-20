@@ -1,0 +1,2 @@
+pip install pandas_datareader
+pip install yfinance
