@@ -10,6 +10,7 @@ today = date.today()
 # We can get data by our choice by giving days bracket
 start_date= '2021-06-01'
 end_date='2021-06-20'
+output_folder='./output'
 files=[]
 def getData(ticker):
     print(ticker)
@@ -20,7 +21,7 @@ def getData(ticker):
 
 # Create a data folder in your current dir.
 def SaveData(df, filename):
-    df.to_csv('./stock_'+filename+'.csv')
+    df.to_csv(output_folder+'/stock_'+filename+'.csv')
 
 #This loop will iterate over ticker list, will pass one ticker to get data, and save that data as file.
 for tik in ticker_list:
@@ -28,6 +29,7 @@ for tik in ticker_list:
     print('this is current fix')
 
 for i in range(0,len(files)):
-    df1= pd.read_csv('./stock_'+ str(files[i])+'.csv')
+    df1= pd.read_csv(output_folder+'/stock_'+ str(files[i])+'.csv')
+    print('this is master update')
     print(df1.head())
     
