@@ -25,6 +25,7 @@ def SaveData(df, filename):
 #This loop will iterate over ticker list, will pass one ticker to get data, and save that data as file.
 for tik in ticker_list:
     getData(tik)
+    print('this is current fix')
 
 for i in range(0,len(files)):
     df1= pd.read_csv('./stock_'+ str(files[i])+'.csv')
